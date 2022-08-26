@@ -45,4 +45,9 @@ public class ProdutoService implements IProduto {
 		
 	}
 
+	@Override
+	public ArrayList<Produto> buscarPeloNome(String nome) {
+		return (ArrayList<Produto>)dao.findByNomeContaining(nome);
+	}
+
 }

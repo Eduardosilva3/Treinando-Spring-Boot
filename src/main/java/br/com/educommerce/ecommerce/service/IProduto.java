@@ -13,4 +13,5 @@ public interface IProduto {
 	public ArrayList<Produto> buscarTodos();
 	public Produto BuscarPeloID(Integer id);
 	public void excluirId(Integer id);
+	public ArrayList<Produto> buscarPeloNome(String nome);
 }

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.educommerce.ecommerce.model.Produto;
@@ -32,5 +33,10 @@ public class ControllerProduto {
 		}
 		
 		return ResponseEntity.notFound().build();
+	}
+	
+	@GetMapping("/produto/busca")
+	public ArrayList<Produto> recuperarPeloNome(@RequestParam(name = "palavra") String palavra){
+		return service.buscarPeloNome(palavra);
 	}
 }
